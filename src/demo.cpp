@@ -82,13 +82,13 @@ static void paste_faces_to_input_image(const cv::Mat &restored_face,
 #endif
 
 int main(int argc, char **argv) {
-  // if (argc != 2) {
-  //   fprintf(stderr, "Usage: %s [imagepath]\n", argv[0]);
-  //   return -1;
-  // }
+  if (argc != 2) {
+    fprintf(stderr, "Usage: %s [imagepath]\n", argv[0]);
+    return -1;
+  }
 
-  // const char *imagepath = argv[1];
-  const char *imagepath = "/home/xdp/code/testGFP/03.jpg";
+  const char *imagepath = argv[1];
+  // const char *imagepath = "/home/xdp/code/testGFP/03.jpg";
 
   cv::Mat img = cv::imread(imagepath, 1);
   if (img.empty()) {
